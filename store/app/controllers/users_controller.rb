@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       login(@user)
-      add_checklists(@user)
       redirect_to user_path(@user)
     else
       flash[:error] = @user.errors.full_messages.join(". ")
@@ -26,7 +25,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-  
+
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
