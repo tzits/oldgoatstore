@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :charges
   resources :users
   resources :items
-  
+  resources :orders
+
 end
