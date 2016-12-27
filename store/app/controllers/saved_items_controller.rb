@@ -1,7 +1,7 @@
 class SavedItemsController < ApplicationController
 
   def create
-    @saved = SavedItem.create(item_params)
+    @saved = SavedItem.create(saved_item_params)
     if @saved.valid?
       @saved.save
       flash[:success] = "Item Saved"
@@ -17,7 +17,7 @@ class SavedItemsController < ApplicationController
 
   private
 
-  def item_params
+  def saved_item_params
     params.require(:saved_item).permit(:item_id,:user_id)
   end
 
