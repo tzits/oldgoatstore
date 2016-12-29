@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    #TODO add sql command to make it only items where quantity > 0 and separate one where = 0
+    @instock = Item.find_by_sql('SELECT * FROM items WHERE quantity > 0')
   end
 
   def show
