@@ -1,12 +1,11 @@
 var Loginform = React.createClass ({
-  setLoginInfo: function() {
-    var login_data = {
-      'username': $('input[name=name]').val(),
-      'password': $('input[name=password]').val()
-    }
-  },
-  login: function(){
-    console.log('clicked')
+  login: function() {
+    console.log('part1')
+    this.setState ({
+      username: $('#name').val(),
+      password: $('#password').val()
+    })
+    console.log(this.state.username)
     $.ajax({
       type: 'POST',
       url: '/login',
@@ -18,9 +17,9 @@ var Loginform = React.createClass ({
       <div>
         <h1>Login to Your Account</h1>
         <label for="username">Email</label>
-        <input name='name'></input><br/>
+        <input id='name'></input><br/>
         <label for="password">Password</label>
-        <input type='password' name='password'></input><br/>
+        <input id='password' name='password'></input><br/>
         <button onClick={this.login}>Log In</button>
       </div>
       )
