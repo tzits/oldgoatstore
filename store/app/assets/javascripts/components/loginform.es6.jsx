@@ -22,6 +22,6 @@ var Loginform = React.createClass ({
         <input id='password' name='password'></input><br/>
         <button onClick={this.login}>Log In</button>
       </div>
-      )
+    )
   }
 })
